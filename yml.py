@@ -4,6 +4,8 @@ def changeBat(fileDirectory, wordToFind, wordToChange, incremento):
         j=0
         pos=[]
         for linea in archivo:
+            linea=linea.lstrip()
+            linea=linea.rstrip()
             if linea == wordToFind:
                 print("match")
                 pos.append(i)
@@ -12,11 +14,11 @@ def changeBat(fileDirectory, wordToFind, wordToChange, incremento):
         print("posicion del cambio = ", pos)
 
     contenido = open(fileDirectory).read().splitlines()
-    print(contenido)
     for index in range(len(pos)):
         print(pos[index])
-        contenido.insert(pos[index]-incremento,wordToChange)
-    f = open(fileDirectory, "w")
+        contenido.insert(pos[index]-incremento,"            "+wordToChange)
+
+    f = open('fileDirectory.yml', "w")
     f.writelines("\n".join(contenido))
 
 changeBat("ola.txt","10.89.105.98","10.89.104.178",0)
