@@ -4,10 +4,9 @@ all:
       children:
         mfs:
           hosts:
-            10.89.104.178
-            10.89.105.98
+            olaaaaaaa
       vars:
         ansible_connection: ssh
-        ansible_user: master
-        ansible_ssh_pass: m1
+        ansible_user: user
+        ansible_ssh_pass: pasword
         ansible_ssh_extra_args: "-o StrictHostKeyChecking=no -o RequestTTY=yes"
